@@ -1,0 +1,62 @@
+<?php 
+$query = mysql_query("UPDATE users SET home_room = '11' ");
+
+?>
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>{hotelname}: Client</title>
+       
+        <link rel="stylesheet" href="{url}/app/tpl/skins/{skin}/styles/client.css" type="text/css">
+                <link rel="shortcut icon" href="{url}/favicon.ico" type="image/vnd.microsoft.icon" />
+       
+        <script type="text/javascript" src="{url}/app/tpl/skins/{skin}/js/swfobject.js"></script>
+        <script type="text/javascript">
+            var BaseUrl = "http://{hotelname}hotel.nl/swf/gordon/PRODUCTION-201601012205-226667486/";
+            var flashvars =
+            {
+                "client.starting" : "Hey {username}! Kijk links, kijk rechts. Knipper twee keer en... ta da!",
+                "client.allow.cross.domain" : "1",
+                "client.notify.cross.domain" : "0",
+                "connection.info.host" : "proxy-yor-game.nl",
+                "connection.info.port" : "343",
+                "site.url" : "http://{hotelname}hotel.nl",
+                "url.prefix" : "http://{hotelname}hotel.nl",
+                "client.reload.url" : "http://{hotelname}hotel.nl/client",
+                "client.fatal.error.url" : "http://{hotelname}hotel.nl/client",
+                "client.connection.failed.url" : "http://{hotelname}hotel.nl/client",
+                "external.variables.txt" : "http://{hotelname}hotel.nl/swf/gamedata/external_variables.txt",
+                "external.texts.txt" : "http://{hotelname}hotel.nl/swf/gamedata/external_flash_texts.txt",
+                "external.figurepartlist.txt" : "http://{hotelname}hotel.nl/swf/gamedata/figuredata.xml",
+                "external.override.texts.txt" : "http://{hotelname}hotel.nl/swf/gamedata/override/external_flash_override_texts.txt",
+                "external.override.variables.txt" : "http://{hotelname}hotel.nl/swf/gamedata/override/external_override_variables.txt",
+                "productdata.load.url" : "http://{hotelname}hotel.nl/swf/gamedata/productdata.txt",
+                "furnidata.load.url" : "http://{hotelname}hotel.nl/swf/gamedata/furnidata.xml",
+                "use.sso.ticket" : "1",
+                "sso.ticket" : "{sso}",
+                "processlog.enabled" : "0",
+                "flash.client.url" : "http://{hotelname}hotel.nl/swf/gordon/PRODUCTION-201601012205-226667486/",
+                "flash.client.origin" : "popup",
+                "nux.lobbies.enabled" : "true"
+            };
+            var params =
+            {
+                "base" : BaseUrl + "/",
+                "allowScriptAccess" : "always",
+                "menu" : "false"          
+            };
+            swfobject.embedSWF(BaseUrl + "/Habbo.swf", "client", "100%", "100%", "10.0.0", "http://{hotelname}hotel.nl/game/expressInstall.swf",                                                                                  flashvars, params, null);
+        </script>
+        
+
+
+
+
+    </head>
+<body>
+    <div id="client"></div>
+</body>
+</html>
